@@ -1,0 +1,135 @@
+/* Calculator UI Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: linear-gradient(135deg, #0f172a, #111827);
+  color: #e5e7eb;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 380px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.display {
+  padding: 16px 20px;
+  background: #0b1220;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: right;
+}
+
+.previous-operand {
+  min-height: 22px;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+.current-operand {
+  min-height: 40px;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: #f8fafc;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 16px;
+  background: #0f172a;
+}
+
+.buttons button {
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  height: 56px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #e5e7eb;
+  background: #1f2937;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 2px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.04s ease, background 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.buttons button:hover {
+  filter: brightness(1.08);
+}
+
+.buttons button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.buttons button:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* Variants */
+.buttons .operator {
+  background: #334155;
+  color: #fbbf24;
+}
+
+.buttons .equals {
+  background: #10b981;
+  color: #06281c;
+}
+
+.buttons .percent {
+  background: #0ea5e9;
+  color: #062033;
+}
+
+.buttons .clear {
+  background: #ef4444;
+  color: #1f0b0b;
+}
+
+.buttons .delete {
+  background: #475569;
+}
+
+.buttons .number {
+  background: #1f2937;
+}
+
+.buttons .span-2 {
+  grid-column: span 2;
+}
+
+/* Responsiveness */
+@media (max-width: 380px) {
+  .current-operand {
+    font-size: 2rem;
+  }
+  .buttons button {
+    height: 52px;
+    font-size: 1rem;
+  }
+}
+
+
